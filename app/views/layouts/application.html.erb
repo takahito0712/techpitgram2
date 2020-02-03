@@ -10,9 +10,22 @@
   </head>
 
   <body>
-  <%# <nav>...</nav>の間のコードを消して下の一行に入れ替える %>
-    <%= render 'partial/navbar' %>
+  
+  <%# この行にif式を追加する %>
+    <%= render 'partial/navbar' if current_user %>
 
+ <%# ==========ここから追加する========== %>
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+    <%# ==========ここまで追加する========== %>
     <%= yield %>
   </body>
 </html>
