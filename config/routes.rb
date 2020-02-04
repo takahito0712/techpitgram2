@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   # post '/posts/:post_id/photos', to: 'photos#create', as: 'post_photos'  #下と同じ意味
   resources :posts, only: %i(new create index show destroy) do
     resources :photos, only: %i(create)
+
+    resources :likes, only: %i(create destroy)
 end
 end
