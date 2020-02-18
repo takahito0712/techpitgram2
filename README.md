@@ -1,24 +1,61 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Takahito Arai
 
-Things you may want to cover:
+画像投稿、コメント、いいね、ができるアプリ。ログイン、ログアウト機能付き。
 
-* Ruby version
+カリキュラムの理解を深めるために製作したアプリ。既存のものに近いものを作りながらgemの理解も深める。
 
-* System dependencies
+ruby '2.6.3'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 
-* Configuration
+URL https://damp-caverns-70658.herokuapp.com/users/sign_in
 
-* Database creation
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|name|string|null: false|
+### Association
+  - has_many :posts, dependent: :destroy
+  - has_many :likes
+  - has_many :comments
 
-* Database initialization
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|caption|string||
+|user_id|integer|null: false, foreign_key: true|
+### Association
+  - belongs_to :user
+  - has_many :photos, dependent: :destroy
+  - has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy
+  - has_many :comments, dependent: :destroy
 
-* How to run the test suite
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|comment|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+  - belongs_to :user
+  - belongs_to :post
 
-* Services (job queues, cache servers, search engines, etc.)
+## likesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+  - belongs_to :user
+  - belongs_to :post
 
-* Deployment instructions
-
-* ...
+## photosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+  - belongs_to :post
