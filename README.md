@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Takahito Arai
 
-Things you may want to cover:
+画像投稿、コメント、いいね、ができるアプリ。ログイン、ログアウト機能付き。
 
-* Ruby version
+カリキュラムの理解を深めるために製作したアプリ。既存のものに近いものを作りながらgemの理解も深める。
 
-* System dependencies
+ruby '2.6.3'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+URL https://damp-caverns-70658.herokuapp.com/users/sign_in
