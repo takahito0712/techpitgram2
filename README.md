@@ -11,6 +11,9 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 
 URL https://damp-caverns-70658.herokuapp.com/users/sign_in
 
+ER図はerd.pdf似て記載
+
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
