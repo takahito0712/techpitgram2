@@ -59,3 +59,21 @@ URL https://damp-caverns-70658.herokuapp.com/users/sign_in
 |post_id|integer|null: false, foreign_key: true|
 ### Association
   - belongs_to :post
+
+  
+@startuml
+    entity "foo" {
+        + foo_id
+        --
+        name
+        ...
+    }
+    entity "bar" {
+        + bar_id
+        --
+        # foo_id
+        name
+        ...
+    }
+    foo ||-ri-o{ bar
+@enduml
