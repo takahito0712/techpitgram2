@@ -1,6 +1,12 @@
 # README
+<img width="1440" alt="スクリーンショット 2020-06-02 0 37 42" src="https://user-images.githubusercontent.com/57932445/83425866-48e96c80-a469-11ea-8618-0faf10444675.png">
 
-Takahito Arai
+
+製作者/Takahito Arai
+
+アプリ名/techpitgram
+
+本番環境/本番環境／Heroku  メールアドレス/test@testtest  フルネーム/test  パスワード／111111フルネーム/test  パスワード／111111
 
 画像投稿、コメント、いいね、ができるアプリ。ログイン、ログアウト機能付き。
 
